@@ -1,11 +1,11 @@
-import Logo from "./Components/Logo";
+import Sidebar from "./Components/Sidebar";
 import Dashboard from "./Dashboard";
 
 function App() {
   return (
     <>
-      <Logo/>
-      <Dashboard />
+      <Sidebar/>
+      <Dashboard/>
     </>
   )
 }

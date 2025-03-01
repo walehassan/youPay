@@ -1,10 +1,17 @@
+import Navbar from "../Components/Navbar";
+import Sidebar from "../Components/Sidebar";
 import "./Dashboard.css";
+import { useState } from 'react';
 
 const Dashboard = () => {
+  const [open, setOpen] = useState(false);
   return (
-    <div>
-      <h1>Dashboard</h1>  
-    </div>
+    <>
+      <Sidebar open={open}/>
+      <main>
+        <Navbar onMenuClick={() => setOpen(!open)}/>
+      </main>
+    </>
   )
 }
 

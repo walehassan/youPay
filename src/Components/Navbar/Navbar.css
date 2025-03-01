@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+    padding: 10px 20px;
+}
+
+.navbar .logo {
+    margin-right: auto;
+    display: none;
+}
+
+.navbar .search-bar, .navbar .user {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .search-bar {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.navbar .user {
+    gap: 20px;
+}
+

@@ -1,0 +1,112 @@
+.sidebar {
+    width: 250px;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    transition: var(--transition);
+    padding-right: 20px;
+    border-right: solid 2.5px var(--border);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background: var(--ui-base);
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.sidebar .logo {
+    padding: 20px 0;
+    margin: 0 20px;
+}
+
+.sidebar .tabs {
+    flex: 1;
+    margin: 20px 0;
+}
+
+.sidebar .tab{
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.sidebar .tab.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--primary);
+    border-radius: 0 20px 20px 0;
+}
+
+.sidebar .tab .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    color: var(--text-muted);
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.sidebar .tab .item:hover {
+    background: var(--ui-secondary);
+    color: var(--text-color);
+    transform: translateX(10px);
+}
+
+.sidebar .tab.active .item {
+    background: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary);
+}
+
+.sidebar .tab .item .count {
+    background: var(--primary);
+    padding: 5px 8px;
+    border-radius: 50px;
+    color: var(--color-white);
+    margin-left: auto;
+    font-size: 12px;
+}
+
+.sidebar .bottom {
+    padding: 20px;
+}
+
+.sidebar .item-tabs {
+    margin: 20px 0;
+}
+
+.sidebar .item-tabs .item-tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.sidebar .user {
+    display: flex;
+    align-items: center;
+    gap: 7px;  
+}
+
+
+@media only screen and (max-width: 1180px) {
+    .sidebar {
+        width: 100%;
+        max-width: 320px;
+        left: -370px;
+    }
+
+    .sidebar.open {
+        left: 0;
+    } 
+}
