@@ -1,10 +1,28 @@
 import React from 'react';
 import "./Sidebar.css";
 import Logo from '../Logo';
+import { useState, useEffect } from 'react';
 import { ChartColumnBig, HandHelping, LayoutDashboard, MessageCircle, MonitorDot, ScrollText, Settings, Wallet, SunMoon } from 'lucide-react';
 import profile from '../../assets/profile.jpg';
 
 const Sidebar = ({open}) => {
+  const storageKey = "theme";
+  const [activeDark, setActiveDark] = useState(
+    JSON.parse(localStorage.getItem(storageKey)) || false
+  )
+
+  useEffect(()=>{
+    if(activeDark){
+      document.firstElementChild.setAttribute("data-theme","dark");
+      localStorage.setItem(storageKey,JSON.stringify(true));
+      return;
+    }else {
+      document.firstElementChild.setAttribute("data-theme","light");
+      localStorage.setItem(storageKey,JSON.stringify(false));
+      return;
+    }
+  },[activeDark])
+
   return (
     <aside className={ `sidebar ${open && "open"}`}> 
       <Logo/>
@@ -59,10 +77,14 @@ const Sidebar = ({open}) => {
            <HandHelping/>
            <h3>Get Help</h3> 
           </div>
-          <div className="item-tab">
+          <label className="item-tab">
+            <input type="checkbox"
+            className='theme-checkbox' 
+            checked={activeDark} 
+            onChange={(event)=>setActiveDark(event.target.checked)} />
             <SunMoon/>
             <h3>Theme</h3>
-          </div>
+          </label>
           <div className="user">
             <div className="profile">
               <img src={profile} alt='' />

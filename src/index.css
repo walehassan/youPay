@@ -5,9 +5,9 @@
     --primary-rgb: 21, 123, 248;
     --text-color: #222222;
     --text-muted: rgb(153,171,195);
-    --text-muted-02: rbg(110,113,129);
+    --text-muted-02: rgb(110,113,129);
     --transition: 0.4s ease-in-out;
-    --border: rbg(238,240,247);
+    --border: rgb(238, 240, 247);
     --color-white: #ffffff;
     --color-dark: #222222;
     --color-success: #33c648;
@@ -18,12 +18,12 @@
     --color-warning-rgb: 255, 187, 85;
     --ui-base: #ffffff;
     --ui-secondary: #f7f7f7;
-    --shadow-1: 0px 42px 20px -5px rgba(0, 0, 0, o.15);
+    --shadow-1: 0px 42px 20px -5px rgba(0, 0, 0, 0.15);
     --shadow-2: 0 1rem 2rem hsl(0 0% 0% / 20%);
-    --shadow-3: 0 2.5rem 2rem hsl(200, 50%, 20% / 40%);
+    --shadow-3: 0 2.5rem 2rem hsla(200, 50%, 20%, 0.4);
 }
 
-[dark-theme="dark"] {
+[data-theme="dark"] {
     --ui-base: #14141a;
     --ui-secondary: #292932;
     --text-color: #ffffff;
@@ -37,8 +37,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     border: none;
+    box-sizing: border-box;
     outline: none;
 }
 
@@ -135,6 +135,7 @@ input::placeholder {
     justify-content: center;
     background: var(--ui-secondary);
     cursor: pointer;
+    border-radius: 100%;
 }
 
 .rounded-icon-btn .icon {

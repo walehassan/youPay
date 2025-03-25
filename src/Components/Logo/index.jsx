@@ -6,10 +6,10 @@ const Logo = () => {
     <div className="logo">
       <LoaderPinwheel size={30} className="primary logo-icon"/>
       <h1>you 
-        <span>Pay.</span>
+        <span className="primary">Pay.</span>
       </h1>
     </div>
   )
 }
 
-export default Logo
+export default Logo;

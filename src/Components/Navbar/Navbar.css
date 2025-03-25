@@ -2,8 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    padding: 10px 15px;
     gap: 30px;
-    padding: 10px 20px;
 }
 
 .navbar .logo {
@@ -26,3 +26,27 @@
     gap: 20px;
 }
 
+.navbar .menu-btn {
+    display: none;
+}
+
+@media only screen and (max-width: 1180px){
+    .navbar {
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 90;
+        background: var(--ui-base);
+    }
+
+    .navbar .logo, .navbar .menu-btn {
+        display: flex;
+    }
+}
+
+
+@media only screen and (max-width: 600px){
+    .navbar .search-bar {
+        display: none;
+    }
+}
